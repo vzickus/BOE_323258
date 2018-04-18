@@ -7,6 +7,17 @@ the zebrafish heart microPIV analysis of frames with z and phase information.
 
 loading_and_piv_funcs_new.py is a "helper" module for the above script.
 
+flowrate directory contains the code to obtain the flow rate
+through a plane in the zerbafish heart.
+
+modified_openPIV directory contains the PIV analysis code.
+
+OOPM_analysis contains an ipython notebook for the out-of-plane
+analysis on synthetic beads.
+
+tube_results contains the python scripts for analysing 50um tube 
+validation experiments
+
 NOTE: since the first vesrion of the manuscript, the PIV analysis now
 adds an extra "padding" of 0 values around the raw data, to allow
 for insertion of an extra interrogation window, which allows 

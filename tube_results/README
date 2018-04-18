@@ -1,0 +1,6 @@
+prof_models.py contains the script for model fitting.
+
+***contour***.py scripts are used for plotting the heatmaps.
+
+alt***fit***.py contrains the scripts that overlay the fit on the
+raw data for tube experiments.

@@ -1,0 +1,6 @@
+ipyhton notebook illustrating how the OOPM effects were investigated.
+
+ipython notebook can be used by configuring "Jupyter notebook" and ran
+from a browser.
+
+Alternatively, code can be moved to a pure python script.
