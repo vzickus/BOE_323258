@@ -95,49 +95,31 @@ for ph_bin in ph_bins:
             b = a
         if i > 0:
             b = np.vstack((b, np.hstack((flow_data[valid], z_vals))))
-#    b = b[np.less(b[:,6],  88) ] 
-    #print b.shape
     # Generate the 3D position coordinates to be fed in the fit.
     data_coords = (b[:, 0] * px, b[:, 1] * px, b[:, 6])
     #print np.unique(data_coords[0]/px)
     # The u-component of the velocity.
     u_data = b[:, 2]*px/dt #* 1000 # velocity in mm
     v_data = b[:, 3]*px/dt
-
-
-
     x_intr = 239.5 * px
-    
     xi = np.where((data_coords[0] == x_intr))
     # axes of interest
-    
     X = data_coords[0][xi]
     Y = data_coords[1][xi] 
     Z = data_coords[2][xi]
-
-    UV_mag= np.sqrt(u_data[xi] ** 2 + v_data[xi] **2)
+    UV_mag = np.sqrt(u_data[xi] ** 2 + v_data[xi] **2)
     U = u_data[xi]
     print "umax, umin:", np.max(U), np.min(U)
-
     x_col = np.reshape(X,(len(X),1))
     y_col = np.reshape(Y,(len(X),1))
     z_col = np.reshape(Z,(len(X),1))  
     xyz = np.hstack((x_col, y_col, z_col))
-
-
     XX, YY, ZZ, dx, dy = grid(Y, Z, -U) 
-
-
-
-    
-
-    
     #calculate flowrate 
     fr = dx*dy*sum(ZZ[~ZZ.mask])/1000000.0
     peak_flow.append(np.mean(ZZ)/1000.0)
+
     flow_rate.append(dx*dy*sum(ZZ[~ZZ.mask])/1000000.0)
-  
-    
     if fr >= 0:
         flow_rate_pos.append(fr)
     elif fr < 0:
@@ -153,8 +135,6 @@ print "max flow rate: ", np.max(flow_rate)
 print "flow rate ", flow_rate
 flow_rate = deque(flow_rate)
 
-
-
 dx = 0.016 #in this case, this is the time "or phase 
 print "trapz, abs total", np.trapz(np.abs(flow_rate), dx = dx) 
 print "trapz, total", np.trapz(flow_rate, dx =dx) 
@@ -168,8 +148,6 @@ net_flow = abs_total_pumped - regurg
 print "regurgitated: ", regurg
 print "net_flow: ", net_flow
 print "sum flow_rate: ", sum(np.abs(flow_rate))
-
-
 
 ph_offset = np.linspace(0.0,2*np.pi,31)[3]
 phases = np.linspace(0.0,2*np.pi,31)[:-1]

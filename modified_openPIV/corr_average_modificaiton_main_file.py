@@ -25,7 +25,7 @@ flw_dir,xyuv_dir,corr_avg_dir,meta_dir = [folder_writer(wkdir, folder) for folde
 ###PARAMS###
 data_type = 'int32'
 corr_method =  'sad'#'sad' # 'fft'
-mode =  'full' # 'full' # "choose 'full' for same sized windows"
+mode =  'full' # 'full' # "choose 'full' for same sized windows when using FFT"
 dt = 1.0
 px_size = 1.0 #0.65 # effective (i.e. (true pixel size in camera)/magnification) pixel size in microns
 subpixel_method = 'parabolic'

@@ -115,17 +115,12 @@ def grid(x, y, z, resX=200, resY=200):
 plt.figure(figsize = (8,6))  
 
 
-XX, YY, ZZ = grid(data_coords[1], data_coords[2], u_data) #grid(data_coords[1], data_coords[2], V_xz_tilt_myway (data_coords,params[0],params[1],params[2],params[3],params[4], params[5], params[6]))
+XX, YY, ZZ = grid(data_coords[1], data_coords[2], u_data)
 plt.contourf(XX, YY, ZZ)
-#plt.title('u-components in yz plane', fontsize=25, y = 1.05)
+
 plt.xlabel("y, ${\mu}m$", fontsize=25)
 plt.ylabel("z, ${\mu}m$", fontsize=25)
-#plt.xticks(rotation=45)
-#plt.ylim(15,65)
-#plt.xlim(5,55)
+
 plt.colorbar()
 plt.tight_layout()    
-#
-#
-#
-#plt.savefig('/home/vytas/1phd/paper_figures/flow_flr_50um_0.5ulmin_beads_only_yz_contour_7220_pts_of_43622_removed.eps',format = 'eps',dpi = 1200)#, bbox_inches='tight')
+

@@ -213,13 +213,6 @@ for X_i in np.unique(X)[::skip]:
     plt.xlim(-(asmd_tb_r + 5.0),asmd_tb_r + 5.0)
     plt.grid(True)
     plt.tight_layout()
-    
-    
-    #plt.savefig('./flow_BF_50um_0.5ulmin_beads_only_xy_no_data_discarded_%s_percent_outside.eps' %(perc_out),format = 'eps',dpi = 1200)#, bbox_inches='tight')#, pad_inches=0.05)
-
-
-
-# Choose a y to plot at
 
 y_intr =  find_nearest(y_eff, y_c_new)
 print "y_intr",  y_intr
@@ -272,8 +265,6 @@ for X_i in np.unique(X)[::30]:
         plt.tight_layout()
 
 
-        #plt.savefig('./flow_BF_50um_0.5ulmin_beads_only_xz_no_data_discarded_%s_percent_outside.eps' %(perc_out),format = 'eps',dpi = 1200)#, bbox_inches='tight')
-#
 
 def grid(x, y, z, resX=200, resY=200):
     "Convert 3 column data to matplotlib grid"
@@ -290,7 +281,7 @@ fig, ax = plt.subplots(figsize = (8,6))
 shift_centre_x = y_c
 shift_centre_y = z_c
 
-# How do I just look at the middle x.
+# How do I just look at the middle x:
 xi_t = np.where(tube_coords[0] == x_intr - x_c)
 #print "xi t here: ", xi_t
 
